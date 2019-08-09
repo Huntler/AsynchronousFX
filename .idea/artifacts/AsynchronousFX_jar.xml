@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AsynchronousFX:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AsynchronousFX_jar</output-path>
+    <root id="archive" name="AsynchronousFX.jar">
+      <element id="module-output" name="AsynchronousFX" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/AsynchronousFX_jar/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
