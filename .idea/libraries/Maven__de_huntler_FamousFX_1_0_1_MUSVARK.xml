@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: de.huntler:FamousFX:1.0.1-MUSVARK">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/de/huntler/FamousFX/1.0.1-MUSVARK/FamousFX-1.0.1-MUSVARK.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/de/huntler/FamousFX/1.0.1-MUSVARK/FamousFX-1.0.1-MUSVARK-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/de/huntler/FamousFX/1.0.1-MUSVARK/FamousFX-1.0.1-MUSVARK-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
