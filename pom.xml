@@ -12,13 +12,20 @@
 
     <groupId>de.huntler</groupId>
     <artifactId>AsynchronousFX</artifactId>
-    <version>1.0-MUSVARK</version>
+    <version>1.1.1-MUSVARK</version>
 
     <dependencies>
         <dependency>
             <groupId>de.huntler</groupId>
             <artifactId>FamousFX</artifactId>
             <version>1.0.1-MUSVARK</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>javaFX</artifactId>
+            <version>2.2</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files/Java/jdk1.8.0_202/jre/lib/ext/jfxrt.jar</systemPath>
         </dependency>
     </dependencies>
 

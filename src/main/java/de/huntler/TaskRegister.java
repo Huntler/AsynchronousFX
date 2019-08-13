@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * @author Jonas Leuchtenberger 09.08.2019
- *
+ * <p>
  * This class is used to register {@link AsyncTask}s and organize them. You
  * can also
  */
@@ -16,7 +16,7 @@ public abstract class TaskRegister<V> {
 
     public static final int TASK_FINISHED = 1;
     public static final int TASK_REGISTERED = 2;
-    private static final int EXECUTE_TASK = 3;
+    public static final int TASK_EXECUTE = 3;
 
     private HashMap<String, AsyncTask<V>> registeredTasks = new HashMap<>();
     private Queue<String> taskExecutionQueue = new PriorityQueue<>();
@@ -79,7 +79,7 @@ public abstract class TaskRegister<V> {
                 this.currentTasksRunning.add(name);
 
                 try {
-                    this.registeredTaskCallback(EXECUTE_TASK, name, null);
+                    this.registeredTaskCallback(TASK_EXECUTE, name, null);
                     AsyncTask<V> task = this.registeredTasks.get(name);
                     task.run();
                     V result = task.get();
@@ -95,6 +95,23 @@ public abstract class TaskRegister<V> {
         });
 
         background.start();
+    }
+
+    /**
+     * This method will cancel the queue safely, that means
+     * the las task will run to its end and after that the queue will be terminated.
+     */
+    public void cancelQueue() {
+        this.taskExecutionQueue.clear();
+    }
+
+    /**
+     * Method fetches the amount of tasks inside the queue
+     *
+     * @return returns the amount of tasks
+     */
+    public int getTasksInQueue() {
+        return this.taskExecutionQueue.size();
     }
 
     /**

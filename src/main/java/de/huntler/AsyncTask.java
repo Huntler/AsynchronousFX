@@ -1,5 +1,7 @@
 package de.huntler;
 
+import de.huntler.views.CircularLoading;
+
 import java.util.concurrent.*;
 
 /**
@@ -10,6 +12,7 @@ public class AsyncTask<V> implements RunnableFuture<V> {
     private Callable<V> task;
     private Callback<V> finishCallback;
     private Callback progressCallback;
+    private CircularLoading loadingAnimation;
 
     private boolean isDone = false;
     private V result;
@@ -33,6 +36,16 @@ public class AsyncTask<V> implements RunnableFuture<V> {
      */
     public void setCallable(Callable<V> callable) {
         this.task = callable;
+    }
+
+    /**
+     * the method sets the loading animation, on {@code this.run()} the
+     * animation will be bound and run.
+     *
+     * @param loadingAnimation should be the animation
+     */
+    public void setAnimation(CircularLoading loadingAnimation) {
+        this.loadingAnimation = loadingAnimation;
     }
 
     /**
@@ -63,6 +76,10 @@ public class AsyncTask<V> implements RunnableFuture<V> {
         if (this.task == null) throw new RuntimeException("No callable to run in background specified.");
 
         this.isDone = false;
+        if (loadingAnimation != null) {
+            loadingAnimation.bind(this);
+        }
+
         new Thread(() -> {
             result = null;
             try {

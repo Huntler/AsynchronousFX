@@ -13,5 +13,14 @@
     <orderEntry type="jdk" jdkName="1.8.0_202" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: de.huntler:FamousFX:1.0.1-MUSVARK" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.oracle:javaFX:2.2">
+        <CLASSES>
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_202/jre/lib/ext/jfxrt.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
