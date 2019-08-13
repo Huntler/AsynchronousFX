@@ -66,10 +66,10 @@ public class CircularLoading extends HBox {
      * @param text should be the text to be shown
      */
     public void setText(String text) {
-        this.image.setImage(new Image(getClass().getResource("/CircularLoading/CircularLoading.png").toExternalForm()));
+        this.image.setVisible(true);
         this.text.setText(text);
 
-        if (text == null) this.image.setImage(null);
+        if (text == null) this.image.setVisible(false);
     }
 
     /**
