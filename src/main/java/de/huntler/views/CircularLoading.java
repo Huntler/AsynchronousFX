@@ -8,6 +8,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
+import java.net.URL;
+
 public class CircularLoading extends HBox {
 
     private Label text;
@@ -33,8 +35,11 @@ public class CircularLoading extends HBox {
 
         // set up the image view
         this.image = new ImageView();
-        this.image.setImage(new Image(getClass().getResource("/CircularLoading/CircularLoading.png").toExternalForm()));
-        this.image.setTint("#ff0000");
+        URL resource = getClass().getResource("/CircularLoading/CircularLoading.png");
+        if (resource != null) {
+            this.image.setImage(new Image(resource.toExternalForm()));
+            this.image.setTint("#ff0000");
+        }
 
         imageHolder.getChildren().add(this.image);
 
