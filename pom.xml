@@ -12,7 +12,7 @@
 
     <groupId>de.huntler</groupId>
     <artifactId>AsynchronousFX</artifactId>
-    <version>1.1.5-MUSVARK</version>
+    <version>1.1.5.1-MUSVARK</version>
 
     <dependencies>
         <dependency>

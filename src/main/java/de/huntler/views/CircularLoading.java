@@ -36,10 +36,9 @@ public class CircularLoading extends HBox {
         // set up the image view
         this.image = new ImageView();
         URL resource = getClass().getResource("/CircularLoading/CircularLoading.png");
-        if (resource != null) {
-            this.image.setImage(new Image(resource.toExternalForm()));
-            this.image.setTint("#ff0000");
-        }
+
+        this.image.setImage(new Image(resource.toExternalForm()));
+        this.image.setTint("#ff0000");
 
         imageHolder.getChildren().add(this.image);
 
